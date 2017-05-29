@@ -1,8 +1,12 @@
 float rotX=-0.5;
 float rotY= 0.5;
-float posX=1, posY=50, posZ=50;
+float posX=1, posY=60, posZ=60;
 float alpha, beta, gamma;
 PShape base, shoulder, upArm, loArm, end;
+
+float[] Xsphere = new float[99];
+float[] Ysphere = new float[99];
+float[] Zsphere = new float[99];
 
 void setup() {
   size(1200, 800, OPENGL);
@@ -27,6 +31,26 @@ void draw() {
   //土台：滑らかさ、影、色
   smooth();
   lights();
+  directionalLight(51, 102, 126, -1, 0, 0);
+  
+  for (int i=0; i< Xsphere.length - 1; i++) {
+    Xsphere[i] = Xsphere[i + 1];
+    Ysphere[i] = Ysphere[i + 1];
+    Zsphere[i] = Zsphere[i + 1];
+  }
+  
+  Xsphere[Xsphere.length - 1] = posX;
+  Ysphere[Ysphere.length - 1] = posY;
+  Zsphere[Zsphere.length - 1] = posZ;
+  
+  for (int i=0; i < Xsphere.length; i++) {
+   pushMatrix();
+   translate(-Ysphere[i]+40, -Zsphere[i]+90, -Xsphere[i]);
+   fill (#D003FF, 25);
+   sphere (float(i) / 10);
+   popMatrix();
+  }
+  
   fill(172, 0, 0);
   stroke(0);
   translate(0, -40, 0);
