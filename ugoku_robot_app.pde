@@ -1,6 +1,7 @@
 float rotX=-0.5;
 float rotY= 0.5;
-PShape base;
+float posX=1, posY=50, posZ=50;
+float alpha, beta, gamma;
 
 void setup(){
   size(1200, 800, OPENGL);
@@ -10,23 +11,32 @@ void draw(){
   //=======台座=======//
   //背景色
   background(100, 100, 100);
-  //調整：滑らかさ、影
-  smooth();
-  lights();
-  //色
-  fill(172,0,0);
   //オブジェクトの位置
   translate(width/2, height/2);
   scale(-4);
   translate(0,-40,0);
-  //カメラアングル：X軸、Y軸、大きさ
   rotateX(rotX);
   rotateY(rotY);
+  //土台：滑らかさ、影、色
+  smooth();
+  lights();
+  fill(172,0,0);
   stroke(0);
+  translate(0,-40,0);
   box(15);
+  //アーム１
+  fill(172,199,0);
+  translate(0, 32, 0);
   noStroke();
   directionalLight(255,255,0,1,1,-1);
-  pillar(25, 5 , 5);
+  pillar(50, 5, 5);
+  //アーム２
+  fill(172,23,234);
+  translate(0, 50, 0);
+  noStroke();
+  directionalLight(255,255,0,1,1,-1);
+  pillar(50, 5, 5);
+  
 }
 
 //マウスアクション
