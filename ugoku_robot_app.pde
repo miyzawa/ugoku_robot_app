@@ -50,25 +50,20 @@ void draw() {
    sphere (float(i) / 10);
    popMatrix();
   }
-  
   fill(172, 0, 0);
   stroke(0);
   translate(0, -40, 0);
   shape(base);
-  //台１
+  
+  //台１★
   fill(172, 199, 242);
-  translate(0, 14, 0);
+  translate(0, 20, 20);
   noStroke();
   directionalLight(255, 255, 0, 1, 1, -1);
   pillar(50, 5, 5);
-  //台２
-  translate(0, 50, 0);
-  noStroke();
-  directionalLight(255, 255, 0, 1, 1, -1);
-  pillar(50, 5, 5);
-
+  
   //アーム
-  translate(0, 4, 0);
+  translate(-20, 30, 0);
   rotateY(gamma);
   shape(shoulder);
 
@@ -76,12 +71,12 @@ void draw() {
   rotateY(PI);
   shape(end);
 
-  translate(0, 25, 0);
+  translate(0, 16, -13);
   rotateY(PI);
   rotateX(alpha);
   shape(upArm);
 
-  translate(0, 4, 0);
+  translate(-20, 15, -4);
   rotateY(gamma);
   shape(shoulder);
 
@@ -104,6 +99,14 @@ void draw() {
   rotateY(PI);
   shape(end);
 
+  
+  //void setup() {
+  //size(1200, 800, OPENGL);
+  //base = loadShape("r5.obj");
+  //shoulder = loadShape("_r1.obj");
+  //upArm = loadShape("r2.obj");
+  //loArm = loadShape("r3.obj");
+  //end = loadShape("r4.obj");
 }
 
 //マウスアクション
