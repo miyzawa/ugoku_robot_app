@@ -3,6 +3,7 @@ float rotY= 0.5;
 float posX=1, posY=60, posZ=60;
 float alpha, beta, gamma;
 PShape base, shoulder, upArm, loArm, end;
+PImage tex;
 
 float[] Xsphere = new float[99];
 float[] Ysphere = new float[99];
@@ -15,6 +16,7 @@ void setup() {
   upArm = loadShape("r2.obj");
   loArm = loadShape("r3.obj");
   end = loadShape("r4.obj");
+  tex = loadImage("gym.png");
 }
 
 void draw() {
@@ -25,9 +27,7 @@ void draw() {
   //オブジェクトの位置
   translate(width/2, height/2);
   scale(-4);
-  translate(0, -40, 0);
-  rotateX(rotX);
-  rotateY(rotY);
+  translate(0, -40, 50);
   //土台：滑らかさ、影、色
   smooth();
   lights();
@@ -98,15 +98,6 @@ void draw() {
   translate(0, 0, -5);
   rotateY(PI);
   shape(end);
-
-  
-  //void setup() {
-  //size(1200, 800, OPENGL);
-  //base = loadShape("r5.obj");
-  //shoulder = loadShape("_r1.obj");
-  //upArm = loadShape("r2.obj");
-  //loArm = loadShape("r3.obj");
-  //end = loadShape("r4.obj");
 }
 
 //マウスアクション
