@@ -1,5 +1,3 @@
-# うさ耳ロボット
-敵は３秒以内に排除する  
-![正面画像](https://github.com/miyzawa/ugoku_robot_app/blob/master/%E6%AD%A3%E9%9D%A2.png)
-
-完
+# 魔法剣士ロボット
+敵を３秒以内に排除する  
+![魔法](https://raw.githubusercontent.com/miyzawa/ugoku_robot_app/master/%E9%AD%94%E6%B3%95%E3%82%92%E4%BD%BF%E3%81%86.png)
