@@ -32,20 +32,30 @@ void create_robot(){
   rotateY(PI);
   rotateX(beta);
   shape(loArm);
-
+  
+  pushMatrix();
+  translate(0, 0, 70);
+  scale(64, 40, 1);
+  texture_back(tex3);
+  rotateY(PI);
+  rotateX(gamma);
+  popMatrix();
+  
   translate(0, 20, 0);
   rotateY(PI);
   rotateX(alpha);
   shape(upArm);
 
-  texture_back(tex);
   translate(0, 0, 50);
   rotateY(PI);
   rotateX(beta);
   shape(loArm);
   
   pushMatrix();
-  translate(30, 0, 0);
-  texture_back(tex);
+  translate(40, 0, 57);
+  scale(70, 30, 1);
+  texture_back(tex2);
+  rotateY(PI);
+  rotateX(gamma);
   popMatrix();
 }

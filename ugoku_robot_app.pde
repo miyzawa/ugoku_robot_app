@@ -9,6 +9,9 @@ float[] Ysphere = new float[99];
 float[] Zsphere = new float[99];
 
 PImage tex;
+PImage tex2;
+PImage tex3;
+PImage tex4;
 
 void setup() {
   size(1024, 768, P3D);
@@ -20,8 +23,12 @@ void setup() {
   loArm    = loadShape("r3.obj");
   end      = loadShape("r4.obj");
   
-  tex = loadImage("kao.png");
+  tex = loadImage("usagi.png");
+  tex2 = loadImage("ken.png");
+  tex3 = loadImage("tate.png");
+  tex4 = loadImage("siro.png");
   
+  textureMode(NORMAL);
   noStroke();
   colorMode(HSB,360,100,100,100);
   fill(0,140,190,80);
@@ -58,6 +65,21 @@ void draw ()
   Xsphere[Xsphere.length - 1] = posX;
   Ysphere[Ysphere.length - 1] = posY;
   Zsphere[Zsphere.length - 1] = posZ;
+  
+  //城絵画
+  pushMatrix();
+  translate(0, 70, 164);
+  scale(500, 250, 1);
+  texture_back(tex4);
+  popMatrix();
+  
+   //うさぎ絵画
+  stroke(0);
+  pushMatrix();
+  translate(-100, -20, 100);
+  scale(30, 42, 0);
+  texture_back(tex);
+  popMatrix();
   
   create_robot();
 }
